@@ -1,6 +1,6 @@
 # bye-bye-server
 
-Community Repository for the Bye-Bye-Server Website
+Community Repository for the [Bye-Bye-Server.com](https://bye-bye-server.com/) Website
 
 ## PRs welcome
 
