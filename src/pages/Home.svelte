@@ -23,7 +23,7 @@
       >Read the official announcement</a>
     </div>
     <a
-      href="https://github.com/realignedtechnologies/bye-bye-server"
+      href="https://github.com/realignedtech/bye-bye-server"
       target="_blank"
       rel="noopener noreferrer"
       class="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold rounded-lg bg-white text-slate-900 hover:bg-slate-100 hover:-translate-y-0.5 transition-all cursor-pointer"

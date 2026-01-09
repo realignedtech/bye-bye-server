@@ -8,7 +8,7 @@
       Bye Bye Server
     </a>
     <a
-      href="https://github.com/realignedtechnologies/bye-bye-server"
+      href="https://github.com/realignedtech/bye-bye-server"
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center gap-2 text-white/90 text-sm font-medium transition-colors hover:text-white"
