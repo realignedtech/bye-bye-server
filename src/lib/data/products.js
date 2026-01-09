@@ -49,6 +49,14 @@ export const products = {
       marketplace: 'No',
     },
     {
+      title: 'Plane',
+      link: 'https://plane.so',
+      hosting: 'Cloud / On Premises',
+      subscription: 'Yes (Free CE)',
+      license: 'AGPL-3.0',
+      marketplace: 'No',
+    },
+    {
       title: 'Taiga',
       link: 'https://www.taiga.io/',
       hosting: 'Cloud, On Premises (on request)',
@@ -113,6 +121,14 @@ export const products = {
       subscription: 'Yes',
       license: 'Proprietary',
       marketplace: 'Yes',
+    },
+    {
+      title: 'Libredesk',
+      link: 'https://libredesk.io',
+      hosting: 'On Premises',
+      subscription: 'No (Free)',
+      license: 'AGPL-3.0',
+      marketplace: 'No',
     },
     {
       title: 'Tiki Trackers',
