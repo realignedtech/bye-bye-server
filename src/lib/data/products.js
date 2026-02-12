@@ -88,6 +88,14 @@ export const products = {
       license: 'ZPL v1.2',
       marketplace: 'No',
     },
+    {
+      title: 'ONES Project',
+      link: 'https://ones.com',
+      hosting: 'On Premises / Cloud',
+      subscription: 'Yes',
+      license: 'Proprietary',
+      marketplace: 'Yes',
+    },
   ],
   jiraservicedesk: [
     {
@@ -161,6 +169,14 @@ export const products = {
       subscription: 'Yes',
       license: 'ZPL v1.2',
       marketplace: 'No',
+    },
+    {
+      title: 'ONES Desk',
+      link: 'https://ones.com',
+      hosting: 'On Premises / Cloud',
+      subscription: 'Yes',
+      license: 'Proprietary',
+      marketplace: 'Yes',
     },
   ],
   confluence: [
@@ -242,6 +258,14 @@ export const products = {
       hosting: 'Cloud / On Premises',
       subscription: 'Yes (Free CE)',
       license: 'LGPL',
+      marketplace: 'Yes',
+    },
+    {
+      title: 'ONES Wiki',
+      link: 'https://ones.com',
+      hosting: 'On Premises / Cloud',
+      subscription: 'Yes',
+      license: 'Proprietary',
       marketplace: 'Yes',
     },
   ],
