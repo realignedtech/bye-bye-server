@@ -73,6 +73,14 @@ export const products = {
       marketplace: 'No',
     },
     {
+      title: 'Windshift',
+      link: 'https://windshift.sh',
+      hosting: 'On Premises',
+      subscription: 'No (Free)',
+      license: 'AGPL',
+      marketplace: 'No',
+    },
+    {
       title: 'YouTrack',
       link: 'https://www.jetbrains.com/youtrack/',
       hosting: 'Cloud, On Premises',
@@ -145,6 +153,14 @@ export const products = {
       subscription: 'Yes (Free CE)',
       license: 'MIT',
       marketplace: 'Yes',
+    },
+    {
+      title: 'Windshift',
+      link: 'https://windshift.sh',
+      hosting: 'On Premises',
+      subscription: 'No (Free)',
+      license: 'AGPL',
+      marketplace: 'No',
     },
     {
       title: 'Zammad',
