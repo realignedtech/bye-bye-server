@@ -1,7 +1,7 @@
 <script>
   import CategorySection from '$lib/components/CategorySection.svelte';
   import { products } from '$lib/data/products.js';
-  import { ArrowRight, GitBranch } from 'lucide-svelte';
+  import { ArrowRight, GitBranch, List } from 'lucide-svelte';
 </script>
 
 <!-- Hero Section -->
@@ -60,4 +60,26 @@
   <CategorySection title="Jira Software Alternatives" products={products.jirasoftware} />
   <CategorySection title="Jira Service Desk Alternatives" products={products.jiraservicedesk} />
   <CategorySection title="Confluence Alternatives" products={products.confluence} />
+</div>
+
+<!-- More Resources -->
+<div class="border-t border-gray-200 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-1">Looking for more open-source Jira alternatives?</h3>
+        <p class="text-sm text-slate-600">Browse the curated, community-maintained list with licenses, languages, and demo links.</p>
+      </div>
+      <a
+        href="https://github.com/stefan-ernst/awesome-jira-alternatives"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-[#013373] text-white hover:bg-[#012a5e] transition-colors whitespace-nowrap"
+      >
+        <List class="w-4 h-4" />
+        awesome-jira-alternatives
+        <ArrowRight class="w-4 h-4" />
+      </a>
+    </div>
+  </div>
 </div>
