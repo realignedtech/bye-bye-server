@@ -18,7 +18,13 @@
         target="_blank"
         rel="noopener noreferrer"
         class="text-slate-200 hover:text-white"
-      >Windshift</a>. The directory includes products that compete with Windshift; listings are curated for their on-premises availability.
+      >Windshift</a>. Listings are not curated by Realigned; anyone can submit an addition or update through
+      <a
+        href="https://github.com/realignedtech/bye-bye-server"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-200 hover:text-white"
+      >GitHub</a>.
     </p>
   </div>
 </footer>

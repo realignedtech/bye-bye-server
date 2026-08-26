@@ -22,7 +22,7 @@ test('homepage ships meaningful content in the initial HTML response', () => {
     html,
     /Bye Bye Server is maintained by Realigned Technologies Ltd, the team behind/
   );
-  assert.match(html, /The directory includes products that compete with Windshift/);
+  assert.match(html, /Listings are not curated by Realigned; anyone can submit an addition or update through/);
 
   const crawlableLinks = html.match(/<a\b[^>]*href=/g) ?? [];
   assert.ok(
