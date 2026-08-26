@@ -1,11 +1,14 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -24,36 +27,55 @@ func main() {
 		log.Fatalf("dist folder not found at %s. Run 'npm run build:frontend' first.", distPath)
 	}
 
-	log.Printf("Serving static files from: %s", distPath)
+	srv := &http.Server{
+		Addr:              ":" + port,
+		Handler:           newHandler(distPath),
+		ReadHeaderTimeout: 5 * time.Second,
+		ReadTimeout:       15 * time.Second,
+		WriteTimeout:      20 * time.Second,
+		IdleTimeout:       60 * time.Second,
+	}
+
+	log.Printf("Serving prerendered files from: %s", distPath)
 	log.Printf("Server running on: http://localhost:%s", port)
 
-	http.HandleFunc("/", spaHandler(distPath))
-
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
+	if err := srv.ListenAndServe(); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
 }
 
-// spaHandler serves static files with SPA fallback
-func spaHandler(distPath string) http.HandlerFunc {
+func newHandler(distPath string) http.Handler {
 	fileServer := http.FileServer(http.Dir(distPath))
+	index := filepath.Join(distPath, "index.html")
+	notFound := filepath.Join(distPath, "404.html")
 
-	return func(w http.ResponseWriter, r *http.Request) {
-		path := filepath.Join(distPath, r.URL.Path)
-
-		// Check if file exists
-		_, err := os.Stat(path)
-		if os.IsNotExist(err) {
-			// Serve index.html for SPA routing
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		clean := path.Clean(r.URL.Path)
+		if clean == "/" {
 			w.Header().Set("Cache-Control", "no-cache")
-			http.ServeFile(w, r, filepath.Join(distPath, "index.html"))
+			http.ServeFile(w, r, index)
 			return
 		}
 
-		// Set cache headers for static assets
-		setCacheHeaders(w, r.URL.Path)
-		fileServer.ServeHTTP(w, r)
-	}
+		relative := filepath.FromSlash(strings.TrimPrefix(clean, "/"))
+		filePath := filepath.Join(distPath, relative)
+		if info, err := os.Stat(filePath); err == nil && !info.IsDir() {
+			setCacheHeaders(w, clean)
+			fileServer.ServeHTTP(w, r)
+			return
+		}
+
+		if f, err := os.Open(notFound); err == nil {
+			defer f.Close()
+			w.Header().Set("Content-Type", "text/html; charset=utf-8")
+			w.Header().Set("Cache-Control", "no-store")
+			w.WriteHeader(http.StatusNotFound)
+			_, _ = io.Copy(w, f)
+			return
+		}
+
+		http.Error(w, "404 page not found", http.StatusNotFound)
+	})
 }
 
 func setCacheHeaders(w http.ResponseWriter, urlPath string) {

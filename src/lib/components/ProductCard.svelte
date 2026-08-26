@@ -18,7 +18,7 @@
     return Server;
   }
 
-  const HostingIcon = getHostingIcon(product.hosting);
+  const HostingIcon = $derived(getHostingIcon(product.hosting));
 </script>
 
 <div class="bg-white border border-slate-200 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full">

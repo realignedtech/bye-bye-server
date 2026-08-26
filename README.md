@@ -45,5 +45,5 @@ docker compose up -d
 ```
 
 ## Tech Stack
-- Frontend: Svelte 5, Vite, Tailwind CSS
-- Backend: Go (static file server)
+- Frontend: SvelteKit/Svelte 5, statically prerendered with Vite and Tailwind CSS
+- Backend: Go static file server with explicit 404 handling
