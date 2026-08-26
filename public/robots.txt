@@ -1,0 +1,8 @@
+# bye-bye-server.com
+# All crawlers welcome, including AI assistants and answer engines — this is a
+# directory of alternatives, and being citable is the point.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bye-bye-server.com/sitemap.xml
