@@ -11,5 +11,14 @@
         Made with <Heart class="w-4 h-4 text-red-500" /> for the Atlassian community
       </p>
     </div>
+    <p class="mt-6 text-center text-sm text-slate-400">
+      Bye Bye Server is maintained by Realigned Technologies Ltd, the team behind
+      <a
+        href="https://windshift.sh"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-200 hover:text-white"
+      >Windshift</a>. The directory includes products that compete with Windshift; listings are curated for their on-premises availability.
+    </p>
   </div>
 </footer>

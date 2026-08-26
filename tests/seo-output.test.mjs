@@ -18,6 +18,11 @@ test('homepage ships meaningful content in the initial HTML response', () => {
   assert.match(html, /href="https:\/\/github\.com\/realignedtech\/bye-bye-server"/);
   assert.match(html, /src="https:\/\/data\.windshift\.dev\/script\.js"/);
   assert.match(html, /data-website-id="be0c9ff8-cc28-4f6b-a046-a9902e6755ff"/);
+  assert.match(
+    html,
+    /Bye Bye Server is maintained by Realigned Technologies Ltd, the team behind/
+  );
+  assert.match(html, /The directory includes products that compete with Windshift/);
 
   const crawlableLinks = html.match(/<a\b[^>]*href=/g) ?? [];
   assert.ok(
